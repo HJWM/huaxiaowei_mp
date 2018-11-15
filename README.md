@@ -1,2 +1,3 @@
-# huaxiaowei_mp
-Xidian Huaxiaowei Weixin Mini Program
+# 西电华小为微信小程序
+
+西安电子科技大学华为创新俱乐部官方小程序

@@ -1,0 +1,26 @@
+<image style="position: fixed; z-index: -999; width: 100%; height: 100%;" src="../../public/img/bd.png" />
+
+<view class="banner-box">
+  <image src="../../public/img/hw.jpg" />
+</view>
+
+<view class="title-box">
+  <text>— 所有模块 —</text>
+</view>
+
+<view class="section">
+  <view class="flex-wrp" style="flex-direction:row;">
+    <navigator url="/pages/resume/resume" hover-class="navigator-hover" class="flex-item func-box">
+      <image class="func-ico" mode="widthFix" src="../../public/img/index-func/resume.png" />
+      <text>华俱介绍</text>
+    </navigator>
+    <navigator url="" hover-class="navigator-hover" class="flex-item func-box">
+      <image class="func-ico" mode="widthFix" src="../../public/img/index-func/books.png" />
+      <text>图书管理</text>
+    </navigator>
+    <navigator url="" hover-class="navigator-hover" class="flex-item func-box">
+      <image class="func-ico" mode="widthFix" src="../../public/img/index-func/booking.png" />
+      <text>活动室预约</text>
+    </navigator>
+  </view>
+</view>
