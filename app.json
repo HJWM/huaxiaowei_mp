@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/my",
+    "pages/resume/resume"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "西电华小为",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "black",
+    "selectedColor": "#13227A",
+    "backgroundColor": "#80D5D4",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "public/img/tabbar/index.png",
+        "selectedIconPath": "public/img/tabbar/index_selc.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "public/img/tabbar/my.png",
+        "selectedIconPath": "public/img/tabbar/my_selc.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "plugins": {
+
+  }
+}

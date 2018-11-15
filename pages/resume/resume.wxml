@@ -1,0 +1,33 @@
+<!--pages/resume/resume.wxml-->
+<view class="page">
+    <view class="page__hd resume-header">
+      <image src="../../public/img/hw.jpg" />
+      <view class="page__title">【西电华为创新俱乐部】</view>
+      <view class="page__desc resume-desc">
+        <text>是西安电子科技大学与华为技术有限公司\n</text>
+        <text>联合创办的全国首个校企联合培养社团\n</text>
+        <text>社团创建于2010年11月26日\n</text>
+        <text>以技术创新为核心\n</text>
+        <text>以打造最具幸福感俱乐部为使命\n</text>
+        <text>已成长为校园社团组织中的排头兵\n</text>
+        <text>欢迎大家加入，下面是详细的部门介绍\n</text>
+      </view>
+    </view>
+    <view class="page__bd page__bd_spacing">
+        <view class="kind-list">
+            <block wx:for="{{list}}" wx:key="id">
+                <view class="kind-list__item">
+                    <view id="{{item.id}}" class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">
+                        <view class="weui-flex__item">{{item.name}}</view>
+                        <image class="kind-list__img" src="images/icon_nav_nav.png"></image>
+                    </view>
+                    <view class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}">
+                        <view class="weui-cells {{item.open ? 'weui-cells_show' : ''}}" style="color: #888888; font-size: 14px;">
+                            <rich-text nodes="{{item.contents}}"></rich-text>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>
