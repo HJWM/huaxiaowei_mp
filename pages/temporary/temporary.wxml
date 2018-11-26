@@ -1,0 +1,18 @@
+<!--pages/temporary/temporary.wxml-->
+<text>这里是图书管理页面</text>
+
+<!-- 书列表信息 -->
+<view wx:for="{{ bookList }}" wx:key="{{ index }}">
+        <view>书目：</view>
+        <view>{{ item.bookName }}</view>
+       
+        <button data-book-id="{{ item.id }} 
+                bindtap="getSingleDetail"
+        >获取具体信息</button>
+  </view>
+
+<!-- 单本书信息 -->
+<view>{{curRecordDate.bookAuthor}}</view>
+
+
+

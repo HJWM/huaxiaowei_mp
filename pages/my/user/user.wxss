@@ -1,0 +1,10 @@
+/* pages/my/user/user.wxss */
+
+.inputDisabled{
+  color:rgb(175, 174, 174);
+}
+.submit_btn{
+  width:200rpx;
+  height:150rpx;
+  margin:auto;
+}

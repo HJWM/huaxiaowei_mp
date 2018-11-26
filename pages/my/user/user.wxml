@@ -1,0 +1,66 @@
+<!--pages/my/user/user.wxml-->
+
+<!-- 这里是用户信息 -->
+<view class="weui-cell weui-cell_input {{isChecked?'inputDisabled':''}}">
+       <view class="weui-cell__hd">
+            <view class="weui-label">姓名</view>
+       </view>
+       <view class="weui-cell__bd">
+         <view class="weui-input" wx:if="{{ !isEditing }}">{{ allPerInfos[0].perName}} </view>
+             <view wx:else>
+           <input class="weui-input" placeholder="请输入你的姓名" 
+        bindinput="bindNameChange"/>
+             </view>
+       </view>
+</view>
+
+ <view class="weui-cell weui-cell_select">
+        <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                <view class="weui-label">性别</view>
+         </view>
+         <view class="weui-cell__bd">
+               <picker bindchange="bindSexChange" value="{{sexIndex}}" range="{{sexes}}">
+                   <view class="weui-select weui-select_in-select-after">{{ sexes[sexIndex]}}</view>
+                 </picker>
+          </view>
+</view>
+
+ <view class="weui-cell weui-cell_select {{isChecked?'inputDisabled':''}}">
+        <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                <view class="weui-label">年级</view>
+         </view>
+         <view class="weui-cell__bd">
+         <view class="weui-input" wx:if="{{ !isEditing }}">{{ classes[allPerInfos[0].classIndex]}} </view>
+             <view wx:else>
+               <picker bindchange="bindClassChange" value="{{classIndex}}" range="{{classes}}">
+                   <view class="weui-select weui-select_in-select-after">{{classes[classIndex]}}</view>
+                 </picker>
+                 </view>
+          </view>
+</view>
+
+<view class="weui-cell weui-cell_select {{isChecked?'inputDisabled':''}}">
+        <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                <view class="weui-label">部门</view>
+         </view>
+         <view class="weui-cell__bd">
+         <view class="weui-input" wx:if="{{ !isEditing }}">{{ departs[allPerInfos[0].departIndex]}} </view>
+             <view wx:else>
+               <picker bindchange="bindDepartChange" value="{{departIndex}}" range="{{departs}}">
+                   <view class="weui-select weui-select_in-select-after">{{departs[departIndex]}}</view>
+                 </picker>
+                </view>
+          </view>
+</view>
+
+<view class="weui-cell weui-cell_input">
+       <view class="weui-cell__hd">
+            <view class="weui-label">手机号码</view>
+       </view>
+       <view class="weui-cell__bd">
+           <input  bindinput="bindNumberChange" class="weui-input" placeholder="{{allPerInfos[0].perNumber||'请输入你的手机号码'}}"/>
+       </view>
+</view>
+
+<button  bindtap="submitate">保存</button>
+

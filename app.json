@@ -2,7 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/my/my",
-    "pages/resume/resume"
+    "pages/resume/resume",
+    "pages/my/user/user",
+    "pages/temporary/temporary"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -29,7 +31,5 @@
       }
     ]
   },
-  "plugins": {
-
-  }
+  "plugins": {}
 }
