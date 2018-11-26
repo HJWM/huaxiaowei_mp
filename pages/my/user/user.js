@@ -1,5 +1,6 @@
 // pages/my/user/user.js
 import user from '../../../utils/user'
+<<<<<<< HEAD
 var app = getApp()
 
 function checkPhone (str) {
@@ -36,6 +37,8 @@ function checkPerInfoValid (phone, name) {
   return validFlag;
 }
 
+=======
+>>>>>>> lihuan
 Page({
 
   /**
@@ -46,9 +49,15 @@ Page({
     sexIndex: '0',
 
     classes: ["2016级", "2017级", "2018级", "2019级"],
+<<<<<<< HEAD
     classIndex: '2',
 
     departs: ["主席团", "无线通信一组", "无线通信二组", "固定带宽组", "云计算与海量数据组", "网络媒体组", "新媒体中心", "秘书处"],
+=======
+    classIndex: '0',
+
+    departs: ["无线通信一组", "无线通信二组", "固定带宽组", "云计算与海量数据组", "网络媒体组", "新媒体中心", "秘书处"],
+>>>>>>> lihuan
     departIndex: '0',
 
     allPerInfos: [],//用户全部信息
@@ -73,6 +82,10 @@ Page({
   },
   //  获取用户性别
   bindSexChange: function (e) {
+<<<<<<< HEAD
+=======
+    console.log(e.detail.value)
+>>>>>>> lihuan
     this.setData({
       'sexIndex': e.detail.value + '',
     })
@@ -80,13 +93,25 @@ Page({
   },
   //  获取用户年级
   bindClassChange: function (e) {
+<<<<<<< HEAD
     this.setData({
       'classIndex': e.detail.value + '',
     })
+=======
+    console.log(e.detail.value)
+    this.setData({
+      'classIndex': e.detail.value + '',
+    })
+    console.log(this.data.classes[this.data.classIndex])
+>>>>>>> lihuan
   },
 
   //  获取用户部门
   bindDepartChange: function (e) {
+<<<<<<< HEAD
+=======
+    console.log(e.detail.value)
+>>>>>>> lihuan
     this.setData({
       'departIndex': e.detail.value + '',
     })
@@ -97,8 +122,14 @@ Page({
     user.getPerInfos(wx.BaaS.storage.get('uid'), (res) => {
       this.setData({
         'allPerInfos': res.data.objects,
+<<<<<<< HEAD
       })
       app.globalData.nowUserInfos = res.data.objects
+=======
+      }),
+      console.log(wx.BaaS.storage.get('uid'))
+      console.log(res.data.objects)
+>>>>>>> lihuan
       if (this.data.allPerInfos.length == 0) {
         this.setData({
           'isEditing': true,
@@ -121,13 +152,17 @@ Page({
   // 保存按钮提交更新时间触发
   submitate: function (e) {
     if (this.data.allPerInfos.length == 0) {
+<<<<<<< HEAD
       if (!checkPerInfoValid(this.data.perNumber, this.data.perName)) return; // 数据校验不合法则弹窗提示并停止提交
+=======
+>>>>>>> lihuan
       user.addPerInfo(this, (res) => {//不存在用户信息时，添加
         this.setData({
           allPerInfos: res.data,
           isEditing: false
         })
         this.fetchPerInfo()
+<<<<<<< HEAD
         wx.showToast({
           icon: 'success',
           title: '资料信息已更新'
@@ -135,11 +170,14 @@ Page({
         setTimeout(() => {
           wx.hideToast();
         }, 1500);
+=======
+>>>>>>> lihuan
       })
     } else {
       this.setData({
         isEditing: false,
       })
+<<<<<<< HEAD
       if (!checkPerInfoValid(this.data.perNumber)) return; // 数据校验不合法则弹窗提示并停止提交
       user.updatePerInfo(this, (res) => {//存在用户信息时，更新
         this.fetchPerInfo()
@@ -150,6 +188,10 @@ Page({
         setTimeout(() => {
           wx.hideToast();
         }, 1500);
+=======
+      user.updatePerInfo(this, (res) => {//存在用户信息时，更新
+        this.fetchPerInfo()
+>>>>>>> lihuan
       })
     }
   },
