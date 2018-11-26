@@ -1,1 +1,32 @@
 /* pages/my/my.wxss */
+
+page{
+  background:rgb(248,248,248)
+}
+.person_weinfo{
+   background:#fff;
+   width:100%;
+   height:450rpx;
+   margin-bottom:50rpx;
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content:center;
+}
+.person_portrait{
+  width:200rpx;
+  height:200rpx;
+  border:1rpx solid #333;
+  border-radius:50%;
+  margin-bottom:40rpx;
+}
+.person_vary{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+}
+.button-edit{
+  border-radius:10rpx;
+  background: #fff!important;
+}
