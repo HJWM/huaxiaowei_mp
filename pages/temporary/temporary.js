@@ -20,53 +20,30 @@ Page({
       curRecordId: e.target.dataset.bookId,
       // 获取当前操作的书的id,数据库的对应行
     })
-<<<<<<< HEAD
-=======
-    // console.log(this.data.curRecordId)
->>>>>>> lihuan
     unitfunction.getBook(this, (res) => {
       this.setData({
         curRecordDate: res.data
       })
-<<<<<<< HEAD
-=======
-      console.log(res.data)
->>>>>>> lihuan
 
     })
 
   },
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
 // 获取所有用户消息并放在了globaldata里
   fetchAllUser() {
     unitfunction.getList(app.globalData.PerInfoId, (res) => {
       app.globalData.allUserList = res.data.objects
     })
   },
->>>>>>> lihuan
-=======
 
->>>>>>> 修改login,globaldata
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.fetchBookList()
-<<<<<<< HEAD
-<<<<<<< HEAD
     // 从globalData获取当前用户信息
-    console.log(app.globalData.nowUserInfos)
-=======
     this.fetchAllUser()
     console.log(app.globalData)
->>>>>>> lihuan
-=======
-    // 从globalData获取全部用户信息
-    console.log(app.globalData.allUserList)
->>>>>>> 修改login,globaldata
   },
 
   /**
