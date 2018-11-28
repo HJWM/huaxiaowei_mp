@@ -1,6 +1,52 @@
 <!--pages/my/my.wxml-->
-<view class="page">
-  <view class="page__hd">
-    <view class="page__title">我的</view>
-  </view>
+<!-- 这里是头像部分 -->
+<view class="person_weinfo">
+  <image class="person_portrait" src="{{personPortrait}}"/>
+  <view wx:if="{{!hasWeInfo }}" class="person_vary">
+    <button open-type="getUserInfo" bindgetuserinfo="userInfoHandler" class="weui-btn mini-btn" type="primary" size="mini">绑定微信账号</button>
+   </view>
+    <view  wx:else class="person_vary">
+      <text>{{personNick}}</text>
+       <button  type="default" size="mini" bindtap="editPerInfo">编辑资料</button>
+    </view>
 </view>
+<!-- 这里是头像部分 -->
+
+<!-- 这里是前两个模块 -->
+        <view class="weui-cells weui-cells_after-title">
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../../public/img/my/order.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">预约记录</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../../public/img/my/note.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">借阅记录</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">2本</view>
+            </navigator>
+        </view>
+<!-- 这里是前两个模块 -->
+
+<!-- 这里是后两个模块 -->
+        <view class="weui-cells weui-cells_after-title" style="margin-top:30rpx">
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../../public/img/my/backadvice.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">意见反馈</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../../public/img/my/aboutus.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">关于我们</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+        </view>
+<!-- 这里是后两个模块 -->
+
