@@ -1,5 +1,5 @@
 // pages/my/my.js
-
+var app = getApp()
 Page({
 
   /**
@@ -30,7 +30,6 @@ Page({
   getPersonWeInfo: function () {
     var value = wx.getStorageSync('personWeInfo')
     if (!(value === '')) {
-      console.log('true')
       this.setData({
         'hasWeInfo': true,
         'personPortrait': value.avatarUrl,
@@ -48,10 +47,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.BaaS.login(false).then(res => {
-    });
     this.getPersonWeInfo()
-
+    // 从globalData获取全部用户信息
+    console.log(app.globalData.allUserList)
   },
 
   

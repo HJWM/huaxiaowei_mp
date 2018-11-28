@@ -1,10 +1,11 @@
+
 // 获取用户信息
 let getPerInfos = (uid, cb) => {
   let tableId = getApp().globalData.PerInfoId,
     PerInfo = new wx.BaaS.TableObject(tableId),
     query = new wx.BaaS.Query()
-  query.compare('created_by', '=', uid)
-  PerInfo.setQuery(query).find()
+   query.compare('created_by', '=', uid)
+   PerInfo.setQuery(query).find()
     .then(res => cb(res))
     .catch(err => console.dir(err))
 }
@@ -55,5 +56,5 @@ let updatePerInfo = (ctx, cb) => {
 module.exports = {
   getPerInfos,
   addPerInfo,
-  updatePerInfo
+  updatePerInfo,
 }

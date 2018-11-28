@@ -30,19 +30,14 @@ Page({
     })
 
   },
-// 获取所有用户消息并放在了globaldata里
-  fetchAllUser() {
-    unitfunction.getList(app.globalData.PerInfoId, (res) => {
-      app.globalData.allUserList = res.data.objects
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.fetchBookList()
-    this.fetchAllUser()
-    console.log(app.globalData)
+    // 从globalData获取全部用户信息
+    console.log(app.globalData.allUserList)
   },
 
   /**
