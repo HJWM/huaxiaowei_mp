@@ -1,5 +1,6 @@
 // pages/my/user/user.js
 import user from '../../../utils/user'
+var app = getApp()
 Page({
 
   /**
@@ -65,9 +66,9 @@ Page({
     user.getPerInfos(wx.BaaS.storage.get('uid'), (res) => {
       this.setData({
         'allPerInfos': res.data.objects,
-      }),
-      console.log(wx.BaaS.storage.get('uid'))
-      console.log(res.data.objects)
+      })
+      app.globalData.nowUserInfos = res.data.objects
+      console.log(app.globalData.nowUserInfos)
       if (this.data.allPerInfos.length == 0) {
         this.setData({
           'isEditing': true,

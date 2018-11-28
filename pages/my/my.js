@@ -48,8 +48,6 @@ Page({
    */
   onLoad: function (options) {
     this.getPersonWeInfo()
-    // 从globalData获取全部用户信息
-    console.log(app.globalData.allUserList)
   },
 
   
@@ -64,7 +62,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+     // 从globalData获取当前用户信息
+    console.log(app.globalData.nowUserInfos)
   },
 
   /**

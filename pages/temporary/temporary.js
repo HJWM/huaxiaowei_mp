@@ -36,8 +36,8 @@ Page({
    */
   onLoad: function (options) {
     this.fetchBookList()
-    // 从globalData获取全部用户信息
-    console.log(app.globalData.allUserList)
+    // 从globalData获取当前用户信息
+    console.log(app.globalData.nowUserInfos)
   },
 
   /**
