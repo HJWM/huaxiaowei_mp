@@ -37,6 +37,7 @@ Page({
 
   },
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 // 获取所有用户消息并放在了globaldata里
@@ -46,11 +47,15 @@ Page({
     })
   },
 >>>>>>> lihuan
+=======
+
+>>>>>>> 修改login,globaldata
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.fetchBookList()
+<<<<<<< HEAD
 <<<<<<< HEAD
     // 从globalData获取当前用户信息
     console.log(app.globalData.nowUserInfos)
@@ -58,6 +63,10 @@ Page({
     this.fetchAllUser()
     console.log(app.globalData)
 >>>>>>> lihuan
+=======
+    // 从globalData获取全部用户信息
+    console.log(app.globalData.allUserList)
+>>>>>>> 修改login,globaldata
   },
 
   /**

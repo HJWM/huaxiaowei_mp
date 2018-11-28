@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 修改login,globaldata
 // pages/my/my.js
 var app = getApp()
 Page({
@@ -49,6 +52,11 @@ Page({
    */
   onLoad: function (options) {
     this.getPersonWeInfo()
+<<<<<<< HEAD
+=======
+    // 从globalData获取全部用户信息
+    console.log(app.globalData.allUserList)
+>>>>>>> 修改login,globaldata
   },
 
   
@@ -63,6 +71,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 修改login,globaldata
   },
 
   /**
@@ -79,6 +91,7 @@ Page({
   
   }
 
+<<<<<<< HEAD
 =======
 // pages/my/my.js
 
@@ -166,4 +179,6 @@ Page({
   }
 
 >>>>>>> lihuan
+=======
+>>>>>>> 修改login,globaldata
 })

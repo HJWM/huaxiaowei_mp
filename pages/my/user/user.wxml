@@ -14,27 +14,18 @@
        </view>
 </view>
 
-<<<<<<< HEAD
  <view class="weui-cell weui-cell_select {{isChecked?'inputDisabled':''}}">
-=======
- <view class="weui-cell weui-cell_select">
->>>>>>> lihuan
         <view class="weui-cell__hd weui-cell__hd_in-select-after">
                 <view class="weui-label">性别</view>
          </view>
          <view class="weui-cell__bd">
-<<<<<<< HEAD
+
          <view class="weui-input" wx:if="{{ !isEditing }}">{{ sexes[allPerInfos[0].sexIndex]}} </view>
              <view wx:else>
                <picker bindchange="bindSexChange" value="{{sexIndex}}" range="{{sexes}}">
                    <view class="weui-select weui-select_in-select-after">{{sexes[sexIndex]}}</view>
                  </picker>
                  </view>
-=======
-               <picker bindchange="bindSexChange" value="{{sexIndex}}" range="{{sexes}}">
-                   <view class="weui-select weui-select_in-select-after">{{ sexes[sexIndex]}}</view>
-                 </picker>
->>>>>>> lihuan
           </view>
 </view>
 
@@ -71,11 +62,8 @@
             <view class="weui-label">手机号码</view>
        </view>
        <view class="weui-cell__bd">
-<<<<<<< HEAD
+
            <input type="number" maxlength="11" bindinput="bindNumberChange" class="weui-input" placeholder="{{allPerInfos[0].perNumber||'请输入你的手机号码'}}"/>
-=======
-           <input  bindinput="bindNumberChange" class="weui-input" placeholder="{{allPerInfos[0].perNumber||'请输入你的手机号码'}}"/>
->>>>>>> lihuan
        </view>
 </view>
 
