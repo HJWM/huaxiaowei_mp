@@ -12,7 +12,6 @@ App({
     wx.BaaS.login(false).then(res => {
       user.getPerInfos(wx.BaaS.storage.get('uid'), (res) => {
         this.globalData.nowUserInfos = res.data.objects
-        console.log(this.globalData.nowUserInfos)
       })
     })  
   },

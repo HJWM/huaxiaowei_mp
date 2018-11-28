@@ -20,12 +20,10 @@ Page({
       curRecordId: e.target.dataset.bookId,
       // 获取当前操作的书的id,数据库的对应行
     })
-    // console.log(this.data.curRecordId)
     unitfunction.getBook(this, (res) => {
       this.setData({
         curRecordDate: res.data
       })
-      console.log(res.data)
 
     })
 

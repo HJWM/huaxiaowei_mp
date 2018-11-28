@@ -38,7 +38,6 @@ Page({
   },
   //  获取用户性别
   bindSexChange: function (e) {
-    console.log(e.detail.value)
     this.setData({
       'sexIndex': e.detail.value + '',
     })
@@ -46,16 +45,13 @@ Page({
   },
   //  获取用户年级
   bindClassChange: function (e) {
-    console.log(e.detail.value)
     this.setData({
       'classIndex': e.detail.value + '',
     })
-    console.log(this.data.classes[this.data.classIndex])
   },
 
   //  获取用户部门
   bindDepartChange: function (e) {
-    console.log(e.detail.value)
     this.setData({
       'departIndex': e.detail.value + '',
     })
@@ -68,7 +64,6 @@ Page({
         'allPerInfos': res.data.objects,
       })
       app.globalData.nowUserInfos = res.data.objects
-      console.log(app.globalData.nowUserInfos)
       if (this.data.allPerInfos.length == 0) {
         this.setData({
           'isEditing': true,

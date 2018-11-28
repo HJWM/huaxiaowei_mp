@@ -16,7 +16,6 @@ let addPerInfo = (ctx, cb) => {
     PerInfo = new wx.BaaS.TableObject(tableId),
     user = PerInfo.create(),
     PerAllInfo = ctx.data.allPerInfos
-  console.log(PerAllInfo)
 
   let data = {
     perName: ctx.data.perName,
