@@ -1,6 +1,41 @@
 // pages/my/user/user.js
 import user from '../../../utils/user'
 var app = getApp()
+
+function checkPhone (str) {
+ var re = /^1\d{10}$/
+ return re.test(str)
+}
+
+function checkPerInfoValid (phone, name) {
+  let invalidMsg = '',
+      validFlag = true;
+
+  // 仅当填写了phone时检查其是否合法
+  if (phone !== undefined && phone !== "" && !checkPhone(phone)) {
+    invalidMsg = '请输入正确的手机号';
+    validFlag = false;
+  }
+
+  // 仅当传入name时检查name
+  if (arguments.length === 2 && (name === undefined || name === '')) {
+    invalidMsg = '请输入姓名';
+    validFlag = false;
+  }
+
+  if (!validFlag) {
+    wx.showToast({
+      title: invalidMsg,
+      icon: "none"
+    })
+    setTimeout(() => {
+      wx.hideToast();
+    }, 1500);
+  }
+
+  return validFlag;
+}
+
 Page({
 
   /**
@@ -86,19 +121,35 @@ Page({
   // 保存按钮提交更新时间触发
   submitate: function (e) {
     if (this.data.allPerInfos.length == 0) {
+      if (!checkPerInfoValid(this.data.perNumber, this.data.perName)) return; // 数据校验不合法则弹窗提示并停止提交
       user.addPerInfo(this, (res) => {//不存在用户信息时，添加
         this.setData({
           allPerInfos: res.data,
           isEditing: false
         })
         this.fetchPerInfo()
+        wx.showToast({
+          icon: 'success',
+          title: '资料信息已更新'
+        })
+        setTimeout(() => {
+          wx.hideToast();
+        }, 1500);
       })
     } else {
       this.setData({
         isEditing: false,
       })
+      if (!checkPerInfoValid(this.data.perNumber)) return; // 数据校验不合法则弹窗提示并停止提交
       user.updatePerInfo(this, (res) => {//存在用户信息时，更新
         this.fetchPerInfo()
+        wx.showToast({
+          icon: 'success',
+          title: '资料信息已更新'
+        })
+        setTimeout(() => {
+          wx.hideToast();
+        }, 1500);
       })
     }
   },
