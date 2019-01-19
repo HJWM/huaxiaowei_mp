@@ -2,7 +2,7 @@
 import myconfig from 'config'
 import user from 'utils/user'
 App({
-  onLaunch: function () { 
+  onLaunch: function () {
     let that = this
     // 引入 BaaS SDK
     require('./utils/sdk-v1.4.0')
@@ -12,14 +12,16 @@ App({
     wx.BaaS.login(false).then(res => {
       user.getPerInfos(wx.BaaS.storage.get('uid'), (res) => {
         this.globalData.nowUserInfos = res.data.objects
+        console.log(this.globalData.nowUserInfos)
       })
-    })  
+    })
   },
-  globalData: { 
+  globalData: {
     clientId: myconfig.myconfig.clientId,
     PerInfoId: myconfig.myconfig.PerInfoId,
     tableId: myconfig.myconfig.tableId,
+    famousId: myconfig.myconfig.famousId,
     nowUserInfos: [],
   },
- 
+
 })

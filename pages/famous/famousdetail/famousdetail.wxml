@@ -1,0 +1,56 @@
+
+<!-- 这里是头部 -->
+<view class="weui-panel weui-panel_access" >
+       <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+              <image class="weui-media-box__thumb" src="{{eachFamousAllInfo[0].famousImg}}" />
+            </view>
+             <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                  <view class="weui-media-box__title">{{eachFamousAllInfo[0].famousName}}</view>
+                        <view class="weui-media-box__desc">{{eachFamousAllInfo[0].famousIntro}}</view>
+                  </view>
+             </view>
+</view>
+<!-- 这里是头部 -->
+<!-- 这里是具体信息 -->
+<view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">offer</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view>{{eachFamousAllInfo[0].famousOffer}}</view>
+               </view>
+           </view>
+</view>
+<view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">项目经验</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view>{{eachFamousAllInfo[0].famousProject}}</view>
+               </view>
+           </view>
+</view>
+<view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">求职经验</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view>{{eachFamousAllInfo[0].famousApply}}</view>
+               </view>
+           </view>
+</view>
+<view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">自我评价</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view>{{eachFamousAllInfo[0].famousSelf}}</view>
+               </view>
+           </view>
+</view>
+<!-- 这里是具体信息 -->

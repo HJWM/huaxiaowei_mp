@@ -1,10 +1,14 @@
 {
   "pages": [
+    "pages/temporary/temporary",
     "pages/index/index",
+    "pages/famous/famous",
+    "pages/famous/searchresult/searchresult",
+    "pages/famous/famousdetail/famousdetail",
     "pages/my/my",
     "pages/resume/resume",
-    "pages/my/user/user",
-    "pages/temporary/temporary"
+    "pages/my/user/user"
+
   ],
   "window": {
     "backgroundTextStyle": "light",

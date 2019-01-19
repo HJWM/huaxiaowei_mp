@@ -47,12 +47,9 @@ Page({
 
     classes: ["2016级", "2017级", "2018级", "2019级"],
     classIndex: '2',
-
     departs: ["主席团", "无线通信一组", "无线通信二组", "固定带宽组", "云计算与海量数据组", "网络媒体组", "新媒体中心", "秘书处"],
     departIndex: '0',
-
     allPerInfos: [],//用户全部信息
-
     isChecked: false//切换样式
   },
 
@@ -97,8 +94,10 @@ Page({
     user.getPerInfos(wx.BaaS.storage.get('uid'), (res) => {
       this.setData({
         'allPerInfos': res.data.objects,
+
       })
       app.globalData.nowUserInfos = res.data.objects
+
       if (this.data.allPerInfos.length == 0) {
         this.setData({
           'isEditing': true,
@@ -122,19 +121,14 @@ Page({
   submitate: function (e) {
     if (this.data.allPerInfos.length == 0) {
       if (!checkPerInfoValid(this.data.perNumber, this.data.perName)) return; // 数据校验不合法则弹窗提示并停止提交
+
       user.addPerInfo(this, (res) => {//不存在用户信息时，添加
         this.setData({
           allPerInfos: res.data,
           isEditing: false
         })
         this.fetchPerInfo()
-        wx.showToast({
-          icon: 'success',
-          title: '资料信息已更新'
-        })
-        setTimeout(() => {
-          wx.hideToast();
-        }, 1500);
+
       })
     } else {
       this.setData({

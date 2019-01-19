@@ -1,0 +1,32 @@
+<view class="weui-search-bar">
+     <view class="weui-search-bar__form">
+           <view class="weui-search-bar__box">
+                <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}"  bindinput="inputTyping" />
+                <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                      <icon type="clear" size="14"></icon>
+                 </view>
+             </view>               
+      </view>
+      <view class="weui-search-bar__cancel-btn"  bindtap="clearInput">取消</view>
+      </view>
+
+
+        <view class="weui-cells searchbar-result" wx:if="{{famousresult.length > 0}}">
+              <!-- 这里是全部的具体信息 -->
+               <block wx:for="{{famousresult}}" wx:key="*this">
+                 <view class="weui-panel weui-panel_access" catchtap="getFid" data-nowFid="{{item.Fid}}">
+                <view url="famousdetail/famousdetail" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="{{item.famousImg}}" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">{{item.famousName}}</view>
+                        <view class="weui-media-box__desc">{{item.famousIntro}}</view>
+                    </view>
+                </view>
+            </view>
+            </block>
+    <!-- 这里是全部的具体信息 -->
+        </view>
+

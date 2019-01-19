@@ -43,3 +43,19 @@
   text-align: left;
   font-size: 14px;
 }
+/* 名人堂 */
+.famous_swiper{ width:750rpx;height:400rpx;}
+.famous_swiper image{ width:750rpx;height:400rpx;}
+.weui-navbar-image{
+  width:70rpx;
+  height:70rpx;
+}
+.weui-bar__item_on{font-weight:bold;color:#000!important}
+.nav_self {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.weui-tab__panel{padding-top:170rpx!important}
+.weui-panel{margin-top:0rpx!important;}
