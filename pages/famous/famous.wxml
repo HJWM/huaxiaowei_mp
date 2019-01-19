@@ -1,0 +1,92 @@
+ <!-- 这里是搜索框 -->
+ <view class="weui-search-bar">
+     <view class="weui-search-bar__form">
+           <view class="weui-search-bar__box">
+                 <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                <input type="text" class="weui-search-bar__input" placeholder="搜索"  bindtap="inputTyping"/>
+                </view> 
+            </view>
+  </view>
+ <!-- 这里是搜索框 -->
+
+<!-- 这里是轮播图 -->
+<swiper indicator-dots="true" indicator-active-color="rgba(255,255,255,0.8)"
+  autoplay="true" interval="3000" duration="1000" class="famous_swiper" >
+  <block wx:for="{{imgUrls}}" wx:key="famous_swiper">
+    <swiper-item>
+      <image src="{{item}}"/>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 这里是轮播图 -->
+
+<!-- 这里是navbar -->
+        <view class="weui-tab">
+            <view class="weui-navbar">
+                <block wx:for="{{tabs}}" wx:key="*this">
+                    <view id="{{index}}" class="nav_self weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                    <image class="weui-navbar-image" src="{{activeIndex == index ? item.src2 :item.src1}}"/>
+                        <view class="weui-navbar__title">{{item.tabname}}</view>                       
+                    </view>
+                </block>
+            </view>
+
+            <view class="weui-tab__panel">
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                <!-- 这里是全部的具体信息 -->
+               <block wx:for="{{allfaous}}" wx:key="*this">
+                 <view class="weui-panel weui-panel_access" catchtap="getFid" data-nowFid="{{item.Fid}}">
+                <view url="famousdetail/famousdetail" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="{{item.famousImg}}" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">{{item.famousName}}</view>
+                        <view class="weui-media-box__desc">{{item.famousIntro}}</view>
+                    </view>
+                </view>
+            </view>
+            </block>
+    <!-- 这里是全部的具体信息 -->
+        </view>
+ 
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+          <!-- 这里是技术达人的具体信息 -->
+               <block wx:for="{{tecperson}}" wx:key="*this">
+                 <view class="weui-panel weui-panel_access" catchtap="getFid" data-nowFid="{{item.Fid}}">
+                <view url="famousdetail/famousdetail" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="{{item.famousImg}}" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">{{item.famousName}}</view>
+                        <view class="weui-media-box__desc">{{item.famousIntro}}</view>
+                    </view>
+                </view>
+            </view>
+            </block>
+    <!-- 这里是技术达人的具体信息 -->
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+            <!-- 这里是非技术达人的具体信息 -->
+               <block wx:for="{{notecperson}}" wx:key="*this">
+                 <view class="weui-panel weui-panel_access" catchtap="getFid" data-nowFid="{{item.Fid}}">
+                <view url="famousdetail/famousdetail" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="{{item.famousImg}}" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">{{item.famousName}}</view>
+                        <view class="weui-media-box__desc">{{item.famousIntro}}</view>
+                    </view>
+                </view>
+            </view>
+            </block>
+    <!-- 这里是非技术达人的具体信息 -->
+                </view>
+            </view>
+        </view>
+
+<!-- 这里是navbar -->
+
+

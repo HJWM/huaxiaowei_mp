@@ -1,18 +1,40 @@
-<!--pages/temporary/temporary.wxml-->
-<text>这里是图书管理页面</text>
 
-<!-- 书列表信息 -->
-<view wx:for="{{ bookList }}" wx:key="{{ index }}">
-        <view>书目：</view>
-        <view>{{ item.bookName }}</view>
+<view>
+<view style="color:red">这里是某一类别的全部书</view>
+ <block wx:for="{{class1Books}}" wx:key="*this">
+   <view>
+   {{item.bookTitle}}
+   </view>         
        
-        <button data-book-id="{{ item.id }} 
-                bindtap="getSingleDetail"
-        >获取具体信息</button>
-  </view>
+  </block>
+</view>
 
-<!-- 单本书信息 -->
-<view>{{curRecordDate.bookAuthor}}</view>
+<view>
+<view style="color:red">这里某个bookId对应书的详细信息</view>
+ <block wx:for="{{class1Detail}}" wx:key="*this">
+   <view>
+   {{item.bookTitle}}
+   </view>      
+   <view>
+   {{item.bookPress}}
+   </view>            
+  </block>
+</view>
 
+<view>
+<view style="color:red">这里按借阅量排序前20项</view>
+ <block wx:for="{{HotBook}}" wx:key="*this">
+   <view>
+   {{item.bookTitle}}
+   </view>                
+  </block>
+</view>
 
-
+<view>
+<view style="color:red">这里按最新排序前20项</view>
+ <block wx:for="{{LastestBook}}" wx:key="*this">
+   <view>
+   {{item.bookTitle}}
+   </view>                
+  </block>
+</view>

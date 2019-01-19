@@ -38,7 +38,8 @@ fetchAllUser(){
     clientId: myconfig.myconfig.clientId,
     PerInfoId: myconfig.myconfig.PerInfoId,
     tableId: myconfig.myconfig.tableId,
-    nowUserInfos: [],
+    famousId: myconfig.myconfig.famousId,
+    nowUserInfos: [],   
   },
 
 })

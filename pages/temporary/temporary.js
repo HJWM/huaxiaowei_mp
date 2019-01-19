@@ -1,49 +1,75 @@
-// pages/bookmange/bookmange.js
+
 var app = getApp()
-import unitfunction from '../../utils/bookoperation'
+import unitdatabase from '../../utils/unitdatabase'
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    bookList: [],//书列表
-    curRecordDate: []//当前书的具体信息
+    class1Books:[],//某个类别全部书
+    class1Detail:[],//某个bookkId对应书的详细信息
+    HotBook: [],//按借阅量排序
+    LastestBook:[]//按最新排序
+    
   },
-  //  获取书列表 
-  fetchBookList() {
-    unitfunction.getList(getApp().globalData.tableId, (res) => {
+ 
+  // 获取某类书的全部书信息
+  getBooks() {
+    unitdatabase.getSomeClass(getApp().globalData.tableId, 'bookType', '1', (res) => {
       this.setData({
-        bookList: res.data.objects
+        class1Books: res.data.objects
+      })
+     
+    })
+  },
+
+  // 获取某bookId书的全部信息
+  getBookDetail() {
+    unitdatabase.getSomeClass(getApp().globalData.tableId, 'bookId', '1', (res) => {
+      this.setData({
+        class1Detail: res.data.objects
+      })
+
+    })
+  },
+  // 按借阅量返回书目前20项
+  getHotBooks() {
+    unitdatabase.getRankn(getApp().globalData.tableId,'-bookBorrowCount',20, (res) => {
+      this.setData({
+        HotBook: res.data.objects
+      })
+
+    })
+  },
+  // 按最新返回书目前20项
+  getLastestBooks() {
+    unitdatabase.getRankn(getApp().globalData.tableId, '-bookIssueDate', 2, (res) => {
+      this.setData({
+        LastestBook: res.data.objects
+      })
+
+    })
+  },
+
+  // 增加某一本书的借阅量
+  addBookBorrowCount() {
+    unitdatabase.getSomeClass(getApp().globalData.tableId, 'bookId', '1', (res) => {
+      unitdatabase.updateCount(getApp().globalData.tableId, res.data.objects[0].id, res.data.objects[0].bookBorrowCount,  (res) => { 
+        
       })
     })
   },
-  // 获取单本书信息
-  getSingleDetail(e) {
-    this.setData({
-      curRecordId: e.target.dataset.bookId,
-      // 获取当前操作的书的id,数据库的对应行
-    })
-    unitfunction.getBook(this, (res) => {
-      this.setData({
-        curRecordDate: res.data
-      })
-
-    })
-
-  },
-
-// 获取所有用户消息并放在了globaldata里
-  fetchAllUser() {
-    unitfunction.getList(app.globalData.PerInfoId, (res) => {
-      app.globalData.allUserList = res.data.objects
-    })
-  },
-
+  
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    this.fetchBookList()
-    // 从globalData获取当前用户信息
-    this.fetchAllUser()
-    console.log(app.globalData)
+  onLoad: function () {
+    this.getBooks()
+    this.getBookDetail()
+    this.getHotBooks()
+    this.getLastestBooks()
+    this.addBookBorrowCount() 
   },
 
   /**

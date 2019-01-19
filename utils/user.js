@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 修改login,globaldata
 
 // 获取用户信息
 let getPerInfos = (uid, cb) => {
@@ -20,10 +16,6 @@ let addPerInfo = (ctx, cb) => {
     PerInfo = new wx.BaaS.TableObject(tableId),
     user = PerInfo.create(),
     PerAllInfo = ctx.data.allPerInfos
-<<<<<<< HEAD
-=======
-  console.log(PerAllInfo)
->>>>>>> 修改login,globaldata
 
   let data = {
     perName: ctx.data.perName,
@@ -64,8 +56,7 @@ module.exports = {
   getPerInfos,
   addPerInfo,
   updatePerInfo,
-<<<<<<< HEAD
-=======
+}
 // 获取用户信息
 let getPerInfos = (uid, cb) => {
   let tableId = getApp().globalData.PerInfoId,
@@ -124,7 +115,4 @@ module.exports = {
   getPerInfos,
   addPerInfo,
   updatePerInfo
->>>>>>> lihuan
-=======
->>>>>>> 修改login,globaldata
 }

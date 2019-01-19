@@ -26,4 +26,7 @@
   <navigator url="/pages/temporary/temporary">
       <button>图书管理的接口</button>
     </navigator>
+  <navigator url="/pages/famous/famous">
+      <button>名人堂</button>
+   </navigator>
 </view>

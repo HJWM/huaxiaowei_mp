@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 修改login,globaldata
+
 // 获取书列表
 let getList = (ctx, cb) => {
   let tableId = ctx,
@@ -25,8 +22,6 @@ module.exports = {
   getList,
   getBook
 }
-<<<<<<< HEAD
-=======
 // 获取书列表
 let getList = (ctx, cb) => {
   let tableId = ctx,
@@ -50,6 +45,4 @@ module.exports = {
   getList,
   getBook
 }
->>>>>>> lihuan
-=======
->>>>>>> 修改login,globaldata
+
